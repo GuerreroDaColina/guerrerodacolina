@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minha Página Web Simples</title>
+    <style>
+        body {
+            background-color: blue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guerrero da Colina</h1>
+    <p>Que a sua força para colocar em prática seja maior do que a sua vontade de vencer!</p>
+    <a href="{{ url_for('pagina_imagens') }}">
+        <img src="{{ url_for('static', filename='logo1.png') }}" alt="Logo">
+    </a>
+    <p class="frase">Honra Acima de Tudo!</p>
+</body>
+</html>

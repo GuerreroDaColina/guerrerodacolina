@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de Imagens</title>
+    <style>
+        body {
+            background-color: rgb(43, 214, 100);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Define três colunas com tamanhos iguais */
+            grid-gap: 20px; /* Define o espaçamento entre as imagens */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Digite aqui sua Frase</h2>
+    <div class="image-container">
+        <a href="{{ url_for('nova_pagina', contador=1) }}">
+            <img src="{{ url_for('static', filename='caldeiraria.png') }}" alt="Imagem 1">
+        </a>
+        <a href="{{ url_for('nova_pagina', contador=2) }}">
+            <img src="{{ url_for('static', filename='serralheria.png') }}" alt="Imagem 2">
+        </a>
+        <a href="{{ url_for('nova_pagina', contador=3) }}">
+            <img src="{{ url_for('static', filename='vidraçaria.jpg') }}" alt="Imagem 3">
+        </a>
+        <a href="{{ url_for('nova_pagina', contador=4) }}">
+            <img src="{{ url_for('static', filename='imagem1.png') }}" alt="apartir da linha de cima que vc começou a inserir outras imagens na segunda tela">
+        </a>
+    </div>
+</body>
+</html>

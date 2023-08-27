@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nova Página</title>
+    <style>
+        body {
+            background-color: blue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            margin-top: 20px;
+        }
+        .image-item {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Digite aqui sua Frase</h2>
+    <div class="image-container">
+        <a href="{{ url_for('outra_pagina', contador=1) }}">
+            <img src="{{ url_for('static', filename='chapeu_chines.jpg') }}" alt="Imagem 1">
+        </a>
+        <a href="{{ url_for('outra_pagina', contador=2) }}">
+            <img src="{{ url_for('static', filename='outra_serralheria.png') }}" alt="Imagem 2">
+        </a>
+        <a href="{{ url_for('outra_pagina', contador=3) }}">
+            <img src="{{ url_for('static', filename='outra_vidraçaria.jpg') }}" alt="Imagem 3">
+        </a>
+        <a href="{{ url_for('outra_pagina', contador=4) }}">
+            <img src="{{ url_for('static', filename='outra_imagem2.png') }}" alt="Imagem 4">
+        </a>
+        <a href="{{ url_for('outra_pagina', contador=5) }}">
+            <img src="{{ url_for('static', filename='outra_imagem3.png') }}" alt="Imagem 5">
+        </a>
+        <a href="{{ url_for('outra_pagina', contador=6) }}">
+            <img src="{{ url_for('static', filename='outra_imagem4.png') }}" alt="Imagem 6">
+        </a>
+    </div>
+</body>
+</html>

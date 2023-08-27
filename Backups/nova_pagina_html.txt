@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nova Página</title>
+    <style>
+        body {
+            background-color: blue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .image-item {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Nova Página</h2>
+    <div class="image-item">
+        <img src="{{ url_for('static', filename=imagem['arquivo']) }}" alt="{{ imagem['nome'] }}">
+        <p class="frase">{{ imagem['texto'] }}</p>
+    </div>
+</body>
+</html>

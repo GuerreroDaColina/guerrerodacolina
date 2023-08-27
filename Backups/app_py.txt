@@ -1,0 +1,32 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/pagina_imagens')
+def pagina_imagens():
+    return render_template('pagina_imagens.html')
+
+@app.route('/nova_pagina/<int:contador>')
+def nova_pagina(contador):
+    imagens = {
+        1: {'nome': 'Imagem 1', 'arquivo': 'imagem1.png', 'texto': 'Escreva alguma coisa aqui'},
+        2: {'nome': 'Imagem 2', 'arquivo': 'serralheria.png', 'texto': 'Texto da imagem 2'},
+        3: {'nome': 'Imagem 3', 'arquivo': 'vidraçaria.jpg', 'texto': 'Texto da imagem 3'},
+        #Daqui pra baixo ainda não deu certo
+        # #4: {'nome': 'Imagem 4', 'arquivo': 'imagem2.jpg', 'texto': 'Escreva alguma coisa aqui'},
+        #5: {'nome': 'Imagem 5', 'arquivo': 'imagem3.jpg', 'texto': 'Texto da imagem 4'},
+        #6: {'nome': 'Imagem 6', 'arquivo': 'imagem4.png', 'texto': 'Texto da imagem 5'},
+    }    
+    imagem = imagens.get(contador)
+
+    if imagem:
+        return render_template('nova_pagina.html', imagem=imagem)
+    else:
+        return render_template('pagina_imagens.html')
+
+if __name__ == '__main__':
+    app.run()

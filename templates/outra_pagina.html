@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Outra Página</title>
+    <style>
+        body {
+            background-color: rgb(12, 12, 14);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            margin-top: 20px;
+        }
+        .image-item {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Digite aqui seua Frase</h2>
+    <div class="image-container">
+        <a href="#">
+            <img src="{{ url_for('static', filename='outra_imagem1.png') }}" alt="Imagem 1">
+        </a>
+        <a href="#">
+            <img src="{{ url_for('static', filename='outra_imagem2.png') }}" alt="Imagem 2">
+        </a>
+        <a href="#">
+            <img src="{{ url_for('static', filename='outra_imagem3.png') }}" alt="Imagem 3">
+        </a>
+        <!-- Adicione mais três imagens aqui -->
+    </div>
+</body>
+</html>
